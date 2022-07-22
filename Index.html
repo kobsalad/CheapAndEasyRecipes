@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Recipes</title>
+	<style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .recipes a {
+            color: lightpink;
+            text-decoration: underline;
+        }
+
+        body {
+            background-image: url("images/Stucco.png");
+            background-size: 900px;
+        }
+
+        .title {
+            padding: 20px;
+            font-size: 36px;
+            font-family: Rockwell, Corbel, sans-serif;
+        }
+
+        .pinkText {
+            color: lightpink;
+        }
+
+        .tabs {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            margin-bottom: 24px;
+            width: 100%;
+            float: left;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .tabs div {
+                float: left;
+                clear: left;
+                width: 120px;
+            }
+        }
+
+        .tabs div, .Info div {
+            color: white;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: Corbel, sans-serif;
+            border: 2px solid black;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            background-color: #333333;
+            display: inline-block;
+        }
+
+        div .currentTab {
+            border: 2px solid lightpink;
+            background-color: antiquewhite;
+        }
+
+        .currentTab a {
+            color: black;
+            font-weight: bold;
+        }
+
+        .tabs div:hover {
+            border: 2px solid lightpink;
+        }
+
+        .Info div {
+            width: 100px;
+        }
+
+        .imageTD img {
+            width: 150px;
+            border: 2px solid black;
+            box-shadow: 5px 5px 5px #555555;
+        }
+
+        .imageTD {
+            width: 0;
+        }
+
+        .recipes > table {
+            clear: left;
+            background-color: gray;
+            margin-bottom: 24px;
+            margin-left: 12px;
+            box-shadow: 5px 5px 5px #555555;
+        }
+
+        td {
+            padding: 4px;
+            vertical-align: top;
+        }
+
+        .recipeContent {
+            font-family: Corbel, sans-serif;
+            padding: 12px 12px 0 12px;
+        }
+
+        .recipeContent div {
+            padding: 6px 6px 0 6px;
+            color: white;
+            font-family: Corbel, sans-serif;
+            border: 2px solid black;
+            background-color: #333333;
+            box-shadow: 5px 5px 5px #555555;
+            max-width: 1200px;
+        }
+
+        .displayNone {
+            display: none;
+        }
+
+        .down {
+            transform: rotate(0deg);
+            width: 40px;
+            float: right;
+            cursor: pointer;
+            border: 2px solid gray;
+        }
+
+        .up {
+            transform: rotate(180deg);
+        }
+
+        [src^="images/Dropdown.png"]:hover {
+            border: 2px solid lightpink;
+        }
+
+        .recipeTitle {
+            font-family: Corbel, sans-serif;
+            font-size: 24px;
+        }
+	</style>
+	<script type="application/javascript">
+        function handleDropDownClick(RecipeContentsID) {
+            var recCont = document.querySelector("#R" + RecipeContentsID);
+            if (recCont.classList.contains("displayNone")) {
+                recCont.className = "recipeContent";
+                recCont.parentElement.parentElement.querySelector("img[src^=\"images/Dropdown.png\"]").className = "down up";
+            } else {
+                recCont.className = "recipeContent displayNone";
+                recCont.parentElement.parentElement.querySelector("img[src^=\"images/Dropdown.png\"]").className = "down";
+            }
+        }
+	</script>
+</head>
+<body>
+<div class="title">Cheap <span class="pinkText">&amp;</span> Easy Recipes</div>
+<div class="tabs">
+	<div class="currentTab"><a href="Index.html">Recipes</a></div>
+	<div><a href="AboutTheAuthor.html">About the author</a></div>
+	<div><a href="SubmitARecipe.html">Submit a recipe</a></div>
+</div>
+<div class="recipes">
+	<table>
+		<tr>
+			<td class="imageTD" rowspan="2"><img src="images/OatmealWithNutButterAndYogurt.png"></td>
+			<td class="recipeTitle">Oatmeal with Nut Butter and Yogurt</td>
+			<td><img class="down" src="images/Dropdown.png" onclick="handleDropDownClick(1)"></td>
+		<tr>
+			<td class="Info" colspan="2">
+				<div>Cal: 400</div>
+				<div>Protein: 30g</div>
+				<div>Sugar: 0g</div>
+				<div>Carbs: 50g</div>
+				<div>Creator: <a href="">Jacob Lamp</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td ID="R1" class="recipeContent displayNone" colspan="3">
+				<div>Ingredients:
+					<ol>
+						<li>Oats: 1 cup</li>
+						<li>Milk: 1.5 cups</li>
+						<li>Nut butter: 2 tbsp</li>
+						<li>Yogurt: 1 cup</li>
+						<li>Optional fruit or other toppings</li>
+					</ol>
+				</div>
+				<hr>
+				<div>Instructions:
+					<ol>
+						<li>Mix oats and milk together in a microwaveable bowl. Microwave for 1.5 - 2 minutes, or let
+							sit overnight. (Raw unsoaked oats are "safe to eat," but are worse for "digestibility and
+							nutrient absorption," as said by <a
+									href="https://www.healthline.com/nutrition/raw-oats#:~:text=Raw%20oats%20are%20nutritious%20and,enhance%20digestibility%20and%20nutrient%20absorption.">healthline.com</a>.)
+						</li>
+						<li>Add yogurt, nut butter, and other fruit or optional toppings. Serve with spoon.</li>
+					</ol>
+				</div>
+				<hr>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="recipes">
+	<table>
+		<tr>
+			<td class="imageTD" rowspan="2"><img src="images/GreekGroundTurkey.png"></td>
+			<td class="recipeTitle">Greek Ground Turkey Zucchini Meatballs</td>
+			<td><img class="down" src="images/Dropdown.png" onclick="handleDropDownClick(2)"></td>
+		<tr>
+			<td class="Info" colspan="2">
+				<div>Cal: 560</div>
+				<div>Protein: 35g</div>
+				<div>Sugar: 4g</div>
+				<div>Carbs: 30g</div>
+				<div>Creator: <a
+						href="https://www.reddit.com/r/budgetfood/comments/vlmnfy/greek_ground_turkey_zucchini_meatballs/">Reddit
+					User</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td ID="R2" class="recipeContent displayNone" colspan="3">
+				<div>Ingredients:
+					<ol>
+						<li>1 sm-med zucchini, shredded</li>
+						<li>1/4 yellow onion, shredded</li>
+						<li>1 lb ground turkey</li>
+						<li>1/2 tsp garlic powder</li>
+						<li>1/2 tsp salt</li>
+						<li>1/2 tsp cumin</li>
+						<li>1/2 tsp cavenders greek seasoning</li>
+						<li>1/2 tsp blended chili flake</li>
+						<li>1/4 tsp black pepper</li>
+						<li>1/4 tsp sumac</li>
+						<li>1/4 cup chopped cilantro or mint or parsley (or all)</li>
+						<li>1 egg</li>
+					</ol>
+				</div>
+				<hr>
+				<div>Instructions:
+					<ol>
+						<li>Mix all together and sear in neutral oil.</li>
+						<li>Served with charred tomatoes, chopped spinach, crumbled feta, and creamy cucumbers: 1/2
+							cucumber plus 2 tsp sour cream or yogurt, 2 tsp lemon juice, garlic, sprinkle sumac, salt
+							and pepper.
+						</li>
+						<li>Served with lemony roasted potatoes.</li>
+					</ol>
+				</div>
+				<hr>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="recipes">
+	<table>
+		<tr>
+			<td class="imageTD" rowspan="2"><img src="images/Yogurt.png"></td>
+			<td class="recipeTitle">Homemade yogurt</td>
+			<td><img class="down" src="images/Dropdown.png" onclick="handleDropDownClick(3)"></td>
+		<tr>
+			<td class="Info" colspan="2">
+				<div>Cal: 143</div>
+				<div>Protein: 12g</div>
+				<div>Sugar: 16g</div>
+				<div>Carbs: 16g</div>
+				<div>Creator: <a
+						href="https://www.reddit.com/r/budgetfood/comments/vz71b8/14_the_price_for_yogurt_how_to_make_homemade/">Reddit
+					User</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td ID="R3" class="recipeContent displayNone" colspan="3">
+				<div>Ingredients:
+					<ol>
+						<li>Milk</li>
+						<li>Yogurt with active culture</li>
+						<li>Optional sugar or fruit</li>
+					</ol>
+				</div>
+				<hr>
+				<div>Instructions:
+					<ol>
+						<li>Boil milk</li>
+						<li>Let milk cool (If you want to be scientific 90F-105F, but I don't think it matters if it
+							goes below 90F. It should be bath water temp)
+						</li>
+						<li>Add yogurt with active culture(the cheapest 4 pack of walmart great value brand yogurt has
+							it, look under the ingredients)
+						</li>
+						<li>Let sit for 6-24 hours(other recipes say to put it in a warm place or a place that wont cool
+							it down immediately, I don't think it matters) and put it in your refrigerator when done.
+						</li>
+						<li>I add 1 tbsp sugar per cup of yogurt. You can add vanilla or fruit, I don't bother.</li>
+						<li>I like 9 hours of sitting time, it reminds me of Yoplait, liquidy and not sour. If you want
+							it firmer and more sour, you can wait longer like 24 hours.
+						</li>
+						<li>You can use your new yogurt as the starter for next time.</li>
+					</ol>
+				</div>
+				<hr>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="recipes">
+	<table>
+		<tr>
+			<td class="imageTD" rowspan="2"><img src="images/Omelette.png"></td>
+			<td class="recipeTitle">Wonderful Omelette</td>
+			<td><img class="down" src="images/Dropdown.png" onclick="handleDropDownClick(4)"></td>
+		<tr>
+			<td class="Info" colspan="2">
+				<div>Cal: 410</div>
+				<div>Protein: 30g</div>
+				<div>Sugar: 0g</div>
+				<div>Carbs: 10g</div>
+				<div>Creator: <a href="">Jacob Lamp</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td ID="R4" class="recipeContent displayNone" colspan="3">
+				<div>Ingredients:
+					<ol>
+						<li>Eggs: 2</li>
+						<li>Butter</li>
+						<li>Salt: 1 tsp</li>
+						<li>Pepper: 1 tsp</li>
+						<li>Nuts: 2 tbsp</li>
+						<li>Chives: 1 tbsp</li>
+						<li>Cheese: 1/4 cup</li>
+						<li>Hot sauce or other sauce</li>
+						<li>Chunks of ham or other meat: 1/4 cup</li>
+					</ol>
+				</div>
+				<hr>
+				<div>Instructions:
+					<ol>
+						<li>Crack the eggs into a bowl, add salt, pepper, half of the cheese, half of the chives, and
+							half of the nuts. Whisk a desired amount.
+						</li>
+						<li>Place a pan on the stove, turn the heat on and spread butter on the pan.</li>
+						<li>Pour the egg mixture on the pan, let it cook until it is strong.</li>
+						<li>Add the rest of the toppings onto one side of the omelette, fold the other side of the
+							omelette over, place on plate and serve with the sauce on the side.
+						</li>
+					</ol>
+				</div>
+				<hr>
+			</td>
+		</tr>
+	</table>
+</div>
+</body></html>

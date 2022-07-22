@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Submit a recipe</title>
+	<style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-image: url("images/Stucco.png");
+            background-size: 900px;
+        }
+
+        .title {
+            padding: 20px;
+            font-size: 36px;
+            font-family: Rockwell, Corbel, sans-serif;
+        }
+
+        .pinkText {
+            color: lightpink;
+        }
+
+        .tabs {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            margin-bottom: 24px;
+            width: 100%;
+            float: left;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .tabs div {
+                float: left;
+                clear: left;
+                width: 120px;
+            }
+        }
+
+        .tabs div {
+            color: white;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: Corbel, sans-serif;
+            border: 2px solid black;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            background-color: #333333;
+            display: inline-block;
+        }
+
+        div .currentTab {
+            border: 2px solid lightpink;
+            background-color: antiquewhite;
+        }
+
+        .currentTab a {
+            color: black;
+            font-weight: bold;
+        }
+
+        .tabs div:hover {
+            border: 2px solid lightpink;
+        }
+
+        .pageContents div {
+            clear: left;
+            padding: 6px;
+            color: white;
+            font-family: Corbel, sans-serif;
+            border: 2px solid black;
+            background-color: #333333;
+            box-shadow: 5px 5px 5px #555555;
+            width: 50%;
+            min-width: 470px;
+            margin-bottom: 12px;
+            margin-left: 12px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 6px;
+            border-bottom: 2px solid lightpink;
+            border-top: 2px solid lightpink;
+        }
+
+        table .bottom {
+            border: 0;
+        }
+
+        input[type^="text"], input[type^="number"], input[type^="submit"], textarea {
+            background-color: lightgray;
+            border: 2px solid lightpink;
+        }
+
+        img {
+            width: 80px;
+        }
+
+        fieldset {
+            border-color: lightpink;
+            margin-bottom: 10px;
+        }
+
+	</style>
+</head>
+<body>
+<div class="title">Cheap <span class="pinkText">&amp;</span> Easy Recipes</div>
+<div class="tabs">
+	<div><a href="Index.html">Recipes</a></div>
+	<div><a href="AboutTheAuthor.html">About the author</a></div>
+	<div class="currentTab"><a href="SubmitARecipe.html">Submit a recipe</a></div>
+</div>
+<div class="pageContents">
+	<div>Warning: This feature is currently out of service. Submitting will only echo your answers back to you.</div>
+	<div>Fill out the form below with a recipe you would like to add to the site.</div>
+	<div>
+		<form action="http://3.86.56.137:8080/CS110Server/EchoParameters">
+			<table>
+				<tr>
+					<td><label for="image">Recipe image</label></td>
+					<td><input type="file" id="image" name="image"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="title">Recipe title</label></td>
+					<td><input type="text" id="title" name="title"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="cal">Calories</label></td>
+					<td><input type="number" id="cal" name="cal"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="protein">Protein (g)</label></td>
+					<td><input type="number" id="protein" name="protein"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="carbs">Carbs (g)</label></td>
+					<td><input type="number" id="carbs" name="carbs"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="sugar">Sugar (g)</label></td>
+					<td><input type="number" id="sugar" name="sugar"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="creator">Creator</label></td>
+					<td><input type="text" id="creator" name="creator"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><label for="ingredients">Ingredients</label></td>
+					<td><textarea id="ingredients" name="ingredients" required></textarea></td>
+					<td><img src="images/Required.png"></td>
+				</tr>
+				<tr>
+					<td><label for="instructions">Instructions</label></td>
+					<td><textarea id="instructions" name="instructions" required></textarea></td>
+					<td><img src="images/Required.png"></td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<fieldset>
+							<legend>Additional Information</legend>
+							<b>Cheap and Easy:</b><br>
+							<input type="checkbox" id="cheap" value="cheap" name="cheapAndEasy"><label
+								for="cheap">Cheap</label><br>
+							<input type="checkbox" id="easy" value="easy" name="cheapAndEasy"><label
+								for="cheap">Easy</label><br><b>Taste:</b><br>
+							<input type="radio" id="good" value="good" name="goodOrBad"><label
+								for="good">Good</label><br>
+							<input type="radio" id="bad" value="bad" name="goodOrBad"><label for="bad">Bad</label>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="bottom"><input type="submit"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+</body></html>
